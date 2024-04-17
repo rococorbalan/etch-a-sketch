@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echo Skecho</title>
+    <script src="./scripts/script.js" defer></script>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <h1>Etch A Sketch</h1>
+    <div id="work-station" style="text-align: center;" >
+        <div class="input">
+            <input class="size" type="range" min="8" max="80" value="16" step="8" oninput="this.nextElementSibling.value = this.value + ' x ' + this.value" orient="vertical">
+            <output id="output">16 x 16</output> 
+        </div>
+        <div id="container">
+    </div>
+    </div>
+</body>
+</html>
