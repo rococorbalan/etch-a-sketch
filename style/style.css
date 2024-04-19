@@ -96,10 +96,21 @@ input[type='range'].size:focus {
     display: flex;
     flex: 1;
     flex-direction: column-reverse;
-    width: 1000px;
-    height: 1000px;
-    box-shadow: 1px 5px 25px 0px #FEBBCC;
     justify-content: center;
     align-items: center;
     gap: 32px;
+}
+
+#sketch {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 1px 5px 25px 0px #FEBBCC;
+    padding: 32px;
+}
+
+#tools {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
