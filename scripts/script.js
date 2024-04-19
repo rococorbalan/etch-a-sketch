@@ -1,4 +1,7 @@
 const container = document.querySelector("#container");
+const input = document.querySelector(".size")
+const pixels = document.querySelectorAll(".pixel")
+
 let mouseDown = false;
 document.body.onmousedown = () => {
     mouseDown = true;
@@ -6,6 +9,7 @@ document.body.onmousedown = () => {
 document.body.onmouseup = () => {
     mouseDown = false;
 }
+
 
 
 function createGrid(rows, columns) {
@@ -23,4 +27,6 @@ function createGrid(rows, columns) {
 }
 
 createGrid(16, 16)
+
+
 
