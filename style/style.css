@@ -8,13 +8,13 @@ h1 {
     font-size: 48px;
     font-weight: lighter;
     font-style: italic;
-    color: black;
+    color: white;
     letter-spacing: 8px;
     margin-bottom: 0;
 }
 
 body {
-    background-color: #FFEECC;
+    background-color: #b5cee1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,7 +30,7 @@ body {
     min-height: 400px;
     max-width: 400px;
     max-height: 400px;
-    box-shadow: 1px 5px 25px 0px #FEBBCC;
+    box-shadow: 1px 5px 25px 0px #bdd7eb;
 }
 
 .pixel {
@@ -38,6 +38,8 @@ body {
     height: 25px;
     background-color: white;
 }
+
+
 
 .input {
     display: flex;
@@ -52,10 +54,10 @@ body {
 
 input[type="range"]{
     -webkit-appearance: none;
-    width: 450px;
+    width: 400px;
     height: 50px;
     overflow: hidden;
-    background-color: #FFEECC;
+    background-color: #d0e5f5;
 }
 
 input[type='range'].size::-webkit-slider-thumb {
@@ -63,7 +65,7 @@ input[type='range'].size::-webkit-slider-thumb {
     border: none;
     height: 16px;
     width: 16px;
-    background: #FEBBCC;
+    background: #99c1df;
     border-radius: 50%;
     margin-top: -4px;
 
@@ -75,7 +77,7 @@ input[type='range'].size::-webkit-slider-runnable-track {
     background: white;
     border: none;
     border-radius: 8px;
-    box-shadow: 1px 5px 25px 0px #FEBBCC;
+    box-shadow: 1px 5px 25px 0px #bdd7eb;
 }
   
 input[type='range'].size:focus {
@@ -104,7 +106,6 @@ input[type='range'].size:focus {
 #sketch {
     display: flex;
     flex-direction: row;
-    box-shadow: 1px 5px 25px 0px #FEBBCC;
     padding: 32px;
 }
 
@@ -113,4 +114,79 @@ input[type='range'].size:focus {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    display: none;
+}
+
+input[type="color"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    border-radius: 50%;
+    background-color: black;
+    width: 40px;
+    height: 40px;
+
+     transition: width 0.3s ease, height 0.3s ease;
+}
+
+input[type="color"]:hover {
+    width: 45px;
+    height: 45px;
+}
+
+.bi-pen-fill {
+    color: white;
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+#color-sec {
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+.secondary-but {
+    border: 2px solid #cbdce8;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+}
+.secondary-but:hover {
+    background-color: #cbdce8;
+    width: 35px;
+    height: 35px;
+}
+#toggle.active{
+    background-color: #cbdce8;
+} 
+
+#box {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 5px 25px 0px #87cdda;
+    padding-bottom: 20px ;
+    background-color: #d0e5f5;
+}
+
+#color-sec {
+    width: 45px;
+    height: 45px;
+}
+
+#tools {
+    display: flex;
+    justify-content: center;
+    width: 60px;
+    height: 400px;
+    padding: 4px;
 }

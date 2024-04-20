@@ -6,6 +6,12 @@ const clear = document.querySelector(".clear")
 const rainbow = document.querySelector(".rainbow")
 const eraser = document.querySelector(".eraser")
 
+document.querySelectorAll('#toggle').forEach(element => {
+    element.addEventListener('click', function() {
+        this.classList.toggle('active');
+    });
+});
+
 let mouseDown = false;
 document.body.onmousedown = () => {
     mouseDown = true;
@@ -17,6 +23,7 @@ document.body.onmouseup = () => {
 let pencilColor = "#000000"
 
 color.addEventListener("input", () =>{
+    color.style.backgroundColor = color.value;
     pencilColor = color.value;
     console.log(pencilColor)
     rainbowMode = false;
@@ -62,14 +69,11 @@ function createGrid(rows, columns) {
                 if (rainbowMode){
                     cell.style.backgroundColor = randomHexColorCode();
                 }
-                if (!rainbowMode){
+                if (!rainbowMode && !activeEraser){
                     cell.style.backgroundColor = pencilColor;
                 }
                 if (activeEraser){
                     cell.style.backgroundColor = "white";
-                }
-                if (!activeEraser){
-                    cell.style.backgroundColor = pencilColor;
                 }
             }
         })
