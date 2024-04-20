@@ -4,6 +4,7 @@ let pixels = container.children
 const color = document.querySelector(".color")
 const clear = document.querySelector(".clear")
 const rainbow = document.querySelector(".rainbow")
+const eraser = document.querySelector(".eraser")
 
 let mouseDown = false;
 document.body.onmousedown = () => {
@@ -18,6 +19,8 @@ let pencilColor = "#000000"
 color.addEventListener("input", () =>{
     pencilColor = color.value;
     console.log(pencilColor)
+    rainbowMode = false;
+    activeEraser = false;
 })
 
 let rainbowMode = false;
@@ -31,16 +34,41 @@ rainbow.addEventListener("click", () => {
     }
 })
 
+let activeEraser = false;
+eraser.addEventListener("click", () => {
+    if (activeEraser == true) {
+        activeEraser = false;
+    }else if (activeEraser == false) {
+        activeEraser = true;
+    }
+})
+
+input.addEventListener("input", () => {
+    console.log(input.value)
+    while (container.hasChildNodes()){
+        container.removeChild(container.firstChild)
+    }
+    createGrid(input.value, input.value)
+})
+
 function createGrid(rows, columns) {
     
     for (let i = 0; i < (rows * columns); i ++){
         let cell = document.createElement("div");
+        cell.style.width = `${400/input.value}px`
+        cell.style.height = `${400/input.value}px`
         cell.addEventListener("mouseover", () => {
             if (mouseDown) {
                 if (rainbowMode){
                     cell.style.backgroundColor = randomHexColorCode();
                 }
                 if (!rainbowMode){
+                    cell.style.backgroundColor = pencilColor;
+                }
+                if (activeEraser){
+                    cell.style.backgroundColor = "white";
+                }
+                if (!activeEraser){
                     cell.style.backgroundColor = pencilColor;
                 }
             }

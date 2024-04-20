@@ -14,14 +14,16 @@
             <input class="color" type="color">
             <button class="clear">Clear</button>
             <button class="rainbow">Rainbow Mode</button>
+            <button class="eraser">eraser</button>
         </div>
         <div id="work-station" style="text-align: center;" >
-            <div class="input">
-                <input class="size" type="range" min="8" max="80" value="16" step="8" oninput="this.nextElementSibling.value = this.value + ' x ' + this.value">
-                <output id="output">16 x 16</output> 
-            </div>
             <div id="container"></div>
         </div>
+    </div>
+    <div class="input">
+        <input class="size" type="range" min="8" max="96" value="16" step="8" oninput="this.nextElementSibling.value = this.value + ' x ' + this.value">
+        <output id="output">16 x 16</output> 
+     
     </div>
 </body>
 </html>
